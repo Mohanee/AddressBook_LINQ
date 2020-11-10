@@ -46,6 +46,9 @@ namespace AddressBook_LinQ
             Console.WriteLine("Contacts belonging to Bhilai");
             lopr.AlphabeticalOrderofContactsByName("Bhilai");
 
+            //UC10(Count By AddressBook Type)
+            Console.WriteLine("\n\nType wise Count of Contacts");
+            lopr.CountContactsByContactType();
         }
     }
 }

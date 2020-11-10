@@ -320,5 +320,17 @@ namespace AddressBook_LinQ
                 Console.Write("\n");
             }
         }
+
+        /// <summary>
+        /// Method to Count number of contacts belonging to a type
+        /// </summary>
+        public void CountContactsByContactType()
+        {
+            var records = dataTable.AsEnumerable().GroupBy(x => x.Field<string>("ABookType")).Select(x => new { ABookType = x.Key, Count = x.Count() });
+            foreach (var row in records)
+            {
+                Console.WriteLine(row.ABookType.PadRight(18) + row.Count);
+            }
+        }
     }
 }
