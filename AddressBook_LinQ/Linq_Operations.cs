@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Linq;
 
 namespace AddressBook_LinQ
 {
@@ -130,7 +131,38 @@ namespace AddressBook_LinQ
             {
                 Console.WriteLine(e.Message);
             }
+
+            try
+            {
+                cvalid.CheckContactValidation("Sheldon", "Cooper", "Street-4", "Casper", "Texas", "525252", "9876778434", "cooper@yahoo.com");
+                dataTable.Rows.Add("Sheldon", "Cooper", "Street-4", "Casper", "Texas", "525252", "9876778434", "cooper@yahoo.com");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            try
+            {
+                cvalid.CheckContactValidation("Siddhi", "Seth", "Gopal Vihar", "Jabalpur", "MadhyaPradesh", "856985", "7458658925", "siddhiseth@gmail.com");
+                dataTable.Rows.Add("Siddhi", "Seth", "Gopal Vihar", "Jabalpur", "MadhyaPradesh", "856985", "7458658925", "siddhiseth@gmail.com");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            try
+            {
+                cvalid.CheckContactValidation("Priyanka", "Chopra", "Street-5", "NewYork", "NewYork", "520147", "8201118267", "priyanka@gmail.com");
+                dataTable.Rows.Add("Priyanka", "Chopra", "Street-5", "NewYork", "NewYork", "520147", "8201118267", "priyanka@gmail.com");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
+
 
         /// <summary>
         /// Method to display all the contacts in the data table
@@ -139,15 +171,37 @@ namespace AddressBook_LinQ
         {
             foreach (DataColumn col in dataTable.Columns)
             {
-                Console.Write(col.ToString().PadRight(14));
+                Console.Write(col.ToString().PadRight(20));
             }
+            Console.WriteLine("");
             foreach (DataRow row in dataTable.Rows)
             {
-                Console.WriteLine();
                 foreach (DataColumn col in dataTable.Columns)
                 {
-                    Console.Write(row[col].ToString().PadRight(14));
+                    Console.Write(row[col].ToString().PadRight(20));
                 }
+                Console.WriteLine();
+            }
+        }
+
+
+        /// <summary>
+        /// Edits the existing contact in datatable
+        /// </summary>
+        public void EditExistingContact()
+        {
+            string name = "Priyanka";
+            var rowToUpdate = dataTable.AsEnumerable().Where(x => x.Field<string>("FirstName").Equals(name)).FirstOrDefault();
+            if (rowToUpdate != null)
+            {
+                rowToUpdate.SetField("PhoneNumber", "8300987876");
+                rowToUpdate.SetField("ZipCode", "534260");
+                Console.WriteLine("\nPhoneNumber and ZipCode of {0} updated successfully!", name);
+                DisplayDataTable();
+            }
+            else
+            {
+                Console.WriteLine("There is no such record in the Address Book!");
             }
         }
     }
