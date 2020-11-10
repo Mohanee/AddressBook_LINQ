@@ -65,7 +65,7 @@ namespace AddressBook_LinQ
             try
             {
                 cvalid.CheckContactValidation("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "WB", "100723", "7893264355", "smondal@gmail.com");
-                dataTable.Rows.Add("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "WB", "100723", "7893264355", "smondal@gmail.com");
+                dataTable.Rows.Add("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "W.B.", "100723", "7893264355", "smondal@gmail.com");
             }
             catch (Exception e)
             {
@@ -217,6 +217,40 @@ namespace AddressBook_LinQ
             {
                 deleteRow.Delete();
                 Console.WriteLine("Contact deleted successfully");
+            }
+        }
+
+
+        /// <summary>
+        /// Retrieve contacts of a particular city
+        /// </summary>
+        /// <param name="city">NAme of the city to be searched for</param>
+        public void RetrieveContactsByCity(string city)
+        {
+            var cityResults = dataTable.AsEnumerable().Where(dr => dr.Field<string>("City") == city);
+            foreach (DataRow row in cityResults)
+            {
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col].ToString().PadRight(20));
+                }
+                Console.WriteLine();
+            }
+        }
+        /// <summary>
+        /// Retrieves contact of a particular state
+        /// </summary>
+        /// <param name="state">Name of the state to be searched for</param>
+        public void RetrieveContactsByState(string state)
+        {
+            var stateResults = dataTable.AsEnumerable().Where(dr => dr.Field<string>("State") == state);
+            foreach (DataRow row in stateResults)
+            {
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col].ToString().PadRight(20));
+                }
+                Console.WriteLine();
             }
         }
     }

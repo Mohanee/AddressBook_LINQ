@@ -28,6 +28,13 @@ namespace AddressBook_LinQ
             lopr.DeleteContact("Sweta");
             lopr.DisplayDataTable();
             Console.WriteLine("\n\n\n");
+
+            //UC6(Retrieve By City and State)
+            Console.WriteLine("Searching for contacts from Bhilai(city)");
+            lopr.RetrieveContactsByCity("Bhilai");
+            Console.WriteLine("\n");
+            Console.WriteLine("Searching for contacts from W.B.(state)");
+            lopr.RetrieveContactsByState("W.B.");
         }
     }
 }
