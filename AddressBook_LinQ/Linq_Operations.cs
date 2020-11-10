@@ -253,5 +253,47 @@ namespace AddressBook_LinQ
                 Console.WriteLine();
             }
         }
+
+
+        /// <summary>
+        /// Displays count of contacts city wise
+        /// </summary>
+        public void CountByCity()
+        {
+            var query = from row in dataTable.AsEnumerable()
+                        group row by row.Field<string>("City") into city
+                        select new
+                        {
+                            City = city.Key,
+                            CountOfCity = city.Count()
+                        };
+            Console.WriteLine("\nCount contacts by city in the Address Book :");
+            Console.WriteLine("City\t\tCount");
+            foreach (var distinctCity in query)
+            {
+                Console.WriteLine(distinctCity.City.PadRight(18) + distinctCity.CountOfCity);
+            }
+        }
+
+        
+        /// <summary>
+        /// Displays count of contacts state wise
+        /// </summary>
+        public void CountByState()
+        {
+            var query = from row in dataTable.AsEnumerable()
+                        group row by row.Field<string>("State") into state
+                        select new
+                        {
+                            State = state.Key,
+                            CountOfState = state.Count()
+                        };
+            Console.WriteLine("\nCount contacts by State in the Address Book :");
+            Console.WriteLine("State\t\tCount");
+            foreach (var distinctState in query)
+            {
+                Console.WriteLine(distinctState.State.PadRight(18) + distinctState.CountOfState);
+            }
+        }
     }
 }

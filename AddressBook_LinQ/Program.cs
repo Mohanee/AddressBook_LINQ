@@ -35,6 +35,16 @@ namespace AddressBook_LinQ
             Console.WriteLine("\n");
             Console.WriteLine("Searching for contacts from W.B.(state)");
             lopr.RetrieveContactsByState("W.B.");
+
+
+            //UC7(Count By City or State)
+            Console.WriteLine("City wise Count of Contacts");
+            lopr.CountByCity();
+            Console.WriteLine("\nState wise Count of Contacts");
+            lopr.CountByState();
+
+
+
         }
     }
 }
