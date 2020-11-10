@@ -13,12 +13,21 @@ namespace AddressBook_LinQ
              lopr.CreateAddressBook();
 
             //UC3(InsertValues)
+            Console.WriteLine("Insertion of Contacts");
             lopr.InsertValues();
             lopr.DisplayDataTable();
+            Console.WriteLine("\n\n\n");
 
             //UC4(EditContact)
-          /*  lopr.EditExistingContact();
-            lopr.DisplayDataTable();*/
+            Console.WriteLine("Editing a contact");
+            lopr.EditExistingContact();
+            Console.WriteLine("\n\n\n");
+
+            //UC5(DeleteContact)
+            Console.WriteLine("Deleting a contact");
+            lopr.DeleteContact("Sweta");
+            lopr.DisplayDataTable();
+            Console.WriteLine("\n\n\n");
         }
     }
 }
