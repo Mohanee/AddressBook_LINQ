@@ -205,6 +205,11 @@ namespace AddressBook_LinQ
             }
         }
 
+
+        /// <summary>
+        /// Deleting a contact with the given name
+        /// </summary>
+        /// <param name="name">Firstname of the contact to be deleted</param>
         public void DeleteContact(string name)
         {
             var deleteRow = dataTable.AsEnumerable().Where(a => a.Field<string>("FirstName").Equals(name)).FirstOrDefault();
