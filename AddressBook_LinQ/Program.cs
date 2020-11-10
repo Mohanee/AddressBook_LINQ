@@ -8,7 +8,14 @@ namespace AddressBook_LinQ
         {
             Console.WriteLine("Hello World! Welcome to AddressBook DataTable Using LinQ");
             Linq_Operations lopr = new Linq_Operations();
+
+            //UC1&2(CreateAddressBook)
             lopr.CreateAddressBook();
+
+            //UC3(InsertValues)
+            lopr.InsertValues();
+            lopr.DisplayDataTable();
+
         }
     }
 }
