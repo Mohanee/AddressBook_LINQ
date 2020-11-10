@@ -7,7 +7,7 @@ namespace AddressBook_LinQ
    
         public class ContactException : Exception
         {
-            public enum error { Invalid_Name, Invalid_Email, Invalid_Zipcode, Invalid_Mobile, Invalid_Address, Invalid_CityState };
+            public enum error { Invalid_Name, Invalid_Email, Invalid_Zipcode, Invalid_Mobile, Invalid_Address, Invalid_CityState, Invalid_NameType };
 
             public error errorType;
 

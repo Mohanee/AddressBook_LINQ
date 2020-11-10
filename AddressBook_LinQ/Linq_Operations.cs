@@ -24,6 +24,8 @@ namespace AddressBook_LinQ
             dataTable.Columns.Add("Zipcode", typeof(string));
             dataTable.Columns.Add("PhoneNumber", typeof(string));
             dataTable.Columns.Add("EmailID", typeof(string));
+            dataTable.Columns.Add("ABookName", typeof(string));
+            dataTable.Columns.Add("ABookType", typeof(string));
         }
 
         /// <summary>
@@ -34,8 +36,8 @@ namespace AddressBook_LinQ
             ContactValidation cvalid = new ContactValidation();
             try
             {
-                cvalid.CheckContactValidation("Trina", "Maity", "HaldiaComplex", "Haldia", "W.B.", "165301", "8983456534", "trinamaity@gmail.com");
-                dataTable.Rows.Add("Trina", "Maity", "HaldiaComplex", "Haldia", "W.B.", "165301", "8983456534", "trinamaity@gmail.com");
+                cvalid.CheckContactValidation("Trina", "Maity", "HaldiaComplex", "Haldia", "W.B.", "165301", "8983456534", "trinamaity@gmail.com","Friends","Informal");
+                dataTable.Rows.Add("Trina", "Maity", "HaldiaComplex", "Haldia", "W.B.", "165301", "8983456534", "trinamaity@gmail.com","Friends","Informal");
             }
             catch (Exception e)
             {
@@ -44,8 +46,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Bruce", "Banner", "Vandalia", "Dayton", "Florida", "454541", "7123425612", "hulkBuster@gmail.com");
-                dataTable.Rows.Add("Bruce", "Banner", "Vandalia", "Dayton", "Florida", "454541", "7123425612", "hulkBuster@gmail.com");
+                cvalid.CheckContactValidation("Bruce", "Banner", "Vandalia", "Dayton", "Florida", "454541", "7123425612", "hulkBuster@gmail.com", "Colleague", "Formal");
+                dataTable.Rows.Add("Bruce", "Banner", "Vandalia", "Dayton", "Florida", "454541", "7123425612", "hulkBuster@gmail.com", "Colleague", "Formal");
             }
             catch (Exception e)
             {
@@ -54,8 +56,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Sweta", "Verma", "Ranchi Estate", "Ranchi", "JHK", "123122", "9889710434", "vermasweta@yahoo.com");
-                dataTable.Rows.Add("Sweta", "Verma", "Ranchi Estate", "Ranchi", "JHK", "123122", "9889710434", "vermasweta@yahoo.com");
+                cvalid.CheckContactValidation("Sweta", "Verma", "Ranchi Estate", "Ranchi", "JHK", "123122", "9889710434", "vermasweta@yahoo.com", "Professor", "Formal");
+                dataTable.Rows.Add("Sweta", "Verma", "Ranchi Estate", "Ranchi", "JHK", "123122", "9889710434", "vermasweta@yahoo.com", "Professor", "Formal");
             }
             catch (Exception e)
             {
@@ -64,8 +66,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "WB", "100723", "7893264355", "smondal@gmail.com");
-                dataTable.Rows.Add("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "W.B.", "100723", "7893264355", "smondal@gmail.com");
+                cvalid.CheckContactValidation("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "WB", "100723", "7893264355", "smondal@gmail.com", "Colleague", "Formal");
+                dataTable.Rows.Add("Sayantani", "Mondal", "IITKGP quaters", "Kharagpur", "W.B.", "100723", "7893264355", "smondal@gmail.com", "Colleague", "Formal");
             }
             catch (Exception e)
             {
@@ -74,8 +76,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Riya", "Srivastav", "Lajpat Nagar", "Delhi", "Delhi", "780431", "9856964579", "riyasriv@yahoo.com");
-                dataTable.Rows.Add("Riya", "Srivastav", "Lajpat Nagar", "Delhi", "Delhi", "780431", "9856964579", "riyasriv@yahoo.com");
+                cvalid.CheckContactValidation("Riya", "Srivastav", "Lajpat Nagar", "Delhi", "Delhi", "780431", "9856964579", "riyasriv@yahoo.com", "Cousin", "Informal");
+                dataTable.Rows.Add("Riya", "Srivastav", "Lajpat Nagar", "Delhi", "Delhi", "780431", "9856964579", "riyasriv@yahoo.com", "Cousin", "Informal");
             }
             catch (Exception e)
             {
@@ -84,8 +86,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Tiasa", "Chakraborty", "RoyalPalace", "Kolkata", "W.B.", "223544", "7849876734", "chaktiasa@rediffmail.com");
-                dataTable.Rows.Add("Tiasa", "Chakraborty", "RoyalPalace", "Kolkata", "W.B.", "223544", "7849876734", "chaktiasa@rediffmail.com");
+                cvalid.CheckContactValidation("Tiasa", "Chakraborty", "RoyalPalace", "Kolkata", "W.B.", "223544", "7849876734", "chaktiasa@rediffmail.com", "Manager", "Formal");
+                dataTable.Rows.Add("Tiasa", "Chakraborty", "RoyalPalace", "Kolkata", "W.B.", "223544", "7849876734", "chaktiasa@rediffmail.com", "Manager", "Formal");
             }
             catch (Exception e)
             {
@@ -94,8 +96,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Natasha", "Barman", "Jalpaiguri Estate", "Jalpaiguri", "W.B.", "178028", "9866735277", "natsbarman@gmail.com");
-                dataTable.Rows.Add("Natasha", "Barman", "Jalpaiguri Estate", "Jalpaiguri", "W.B.", "178028", "9866735277", "natsbarman@gmail.com");
+                cvalid.CheckContactValidation("Natasha", "Barman", "Jalpaiguri Estate", "Jalpaiguri", "W.B.", "178028", "9866735277", "natsbarman@gmail.com", "Cousin", "Informal");
+                dataTable.Rows.Add("Natasha", "Barman", "Jalpaiguri Estate", "Jalpaiguri", "W.B.", "178028", "9866735277", "natsbarman@gmail.com", "Cousin", "Informal");
             }
             catch (Exception e)
             {
@@ -104,8 +106,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Priya", "Arya", "Sector1", "Bhilai", "C.G.", "490006", "8987224534", "arya7priya@gmail.com");
-                dataTable.Rows.Add("Priya", "Arya", "Sector1", "Bhilai", "C.G.", "490006", "8987224534", "arya7priya@gmail.com");
+                cvalid.CheckContactValidation("Priya", "Arya", "Sector1", "Bhilai", "C.G.", "490006", "8987224534", "arya7priya@gmail.com", "Sister", "Informal");
+                dataTable.Rows.Add("Priya", "Arya", "Sector1", "Bhilai", "C.G.", "490006", "8987224534", "arya7priya@gmail.com", "Sister", "Informal");
             }
             catch (Exception e)
             {
@@ -114,8 +116,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Ishika", "Mitra", "Farid Nagar", "Faridabad", "Delhi", "100112", "6767986886", "jarvis@gmail.com");
-                dataTable.Rows.Add("Ishika", "Mitra", "Farid Nagar", "Faridabad", "Delhi", "100112", "6767986886", "jarvis@gmail.com");
+                cvalid.CheckContactValidation("Ishika", "Mitra", "Farid Nagar", "Faridabad", "Delhi", "100112", "6767986886", "jarvis@gmail.com", "Manager", "Formal");
+                dataTable.Rows.Add("Ishika", "Mitra", "Farid Nagar", "Faridabad", "Delhi", "100112", "6767986886", "jarvis@gmail.com", "Manager", "Formal");
             }
             catch (Exception e)
             {
@@ -124,8 +126,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Alisha", "Sharma", "Sector8", "Bhilai", "C.G.", "178001", "9876543256", "sharmalaisha@yahoo.com");
-                dataTable.Rows.Add("Alisha", "Sharma", "Sector8", "Bhilai", "C.G.", "178001", "9876543256", "sharmalaisha@yahoo.com");
+                cvalid.CheckContactValidation("Alisha", "Sharma", "Sector8", "Bhilai", "C.G.", "178001", "9876543256", "sharmalaisha@yahoo.com", "Friends", "Informal");
+                dataTable.Rows.Add("Alisha", "Sharma", "Sector8", "Bhilai", "C.G.", "178001", "9876543256", "sharmalaisha@yahoo.com", "Friends", "Informal");
             }
             catch (Exception e)
             {
@@ -134,8 +136,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Sheldon", "Cooper", "Street-4", "Bhilai", "C.G.", "525252", "9876778434", "cooper@yahoo.com");
-                dataTable.Rows.Add("Sheldon", "Cooper", "Street-4", "Bhilai", "C.G.", "525252", "9876778434", "cooper@yahoo.com");
+                cvalid.CheckContactValidation("Sheldon", "Cooper", "Street-4", "Bhilai", "C.G.", "525252", "9876778434", "cooper@yahoo.com", "Teacher", "Formal");
+                dataTable.Rows.Add("Sheldon", "Cooper", "Street-4", "Bhilai", "C.G.", "525252", "9876778434", "cooper@yahoo.com", "Teacher", "Formal");
             }
             catch (Exception e)
             {
@@ -144,8 +146,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Siddhi", "Seth", "Gopal Vihar", "Jabalpur", "MadhyaPradesh", "856985", "7458658925", "siddhiseth@gmail.com");
-                dataTable.Rows.Add("Siddhi", "Seth", "Gopal Vihar", "Jabalpur", "MadhyaPradesh", "856985", "7458658925", "siddhiseth@gmail.com");
+                cvalid.CheckContactValidation("Siddhi", "Seth", "Gopal Vihar", "Jabalpur", "MadhyaPradesh", "856985", "7458658925", "siddhiseth@gmail.com", "Professor", "Formal");
+                dataTable.Rows.Add("Siddhi", "Seth", "Gopal Vihar", "Jabalpur", "MadhyaPradesh", "856985", "7458658925", "siddhiseth@gmail.com", "Professor", "Formal");
             }
             catch (Exception e)
             {
@@ -154,8 +156,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Priyanka", "Chopra", "Street-5", "NewYork", "NewYork", "520147", "8201118267", "priyanka@gmail.com");
-                dataTable.Rows.Add("Priyanka", "Chopra", "Street-5", "NewYork", "NewYork", "520147", "8201118267", "priyanka@gmail.com");
+                cvalid.CheckContactValidation("Priyanka", "Chopra", "Street-5", "NewYork", "NewYork", "520147", "8201118267", "priyanka@gmail.com", "Teacher", "Formal");
+                dataTable.Rows.Add("Priyanka", "Chopra", "Street-5", "NewYork", "NewYork", "520147", "8201118267", "priyanka@gmail.com", "Teacher", "Formal");
             }
             catch (Exception e)
             {
