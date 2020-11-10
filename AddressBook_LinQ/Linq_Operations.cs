@@ -134,8 +134,8 @@ namespace AddressBook_LinQ
 
             try
             {
-                cvalid.CheckContactValidation("Sheldon", "Cooper", "Street-4", "Casper", "Texas", "525252", "9876778434", "cooper@yahoo.com");
-                dataTable.Rows.Add("Sheldon", "Cooper", "Street-4", "Casper", "Texas", "525252", "9876778434", "cooper@yahoo.com");
+                cvalid.CheckContactValidation("Sheldon", "Cooper", "Street-4", "Bhilai", "C.G.", "525252", "9876778434", "cooper@yahoo.com");
+                dataTable.Rows.Add("Sheldon", "Cooper", "Street-4", "Bhilai", "C.G.", "525252", "9876778434", "cooper@yahoo.com");
             }
             catch (Exception e)
             {
@@ -293,6 +293,29 @@ namespace AddressBook_LinQ
             foreach (var distinctState in query)
             {
                 Console.WriteLine(distinctState.State.PadRight(18) + distinctState.CountOfState);
+            }
+        }
+
+        /// <summary>
+        /// List all the contacts belonging to a city in alphabetical order
+        /// </summary>
+        /// <param name="city">Name of the city to get list of contacts</param>
+        public void AlphabeticalOrderofContactsByName(string city)
+        {
+            Console.WriteLine("\nSorting Contacts By Name alphabetically for a given City :");
+            foreach (DataColumn col in dataTable.Columns)
+            {
+                Console.Write(col.ToString().PadRight(14));
+            }
+            Console.Write("\n");
+            var records = dataTable.AsEnumerable().Where(r => r.Field<string>("city") == city).OrderBy(r => r.Field<string>("FirstName")).ThenBy(r => r.Field<string>("LastName"));
+            foreach (DataRow row in records)
+            {
+                foreach (DataColumn col in dataTable.Columns)
+                {
+                    Console.Write(row[col].ToString().PadRight(14));
+                }
+                Console.Write("\n");
             }
         }
     }

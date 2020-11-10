@@ -10,7 +10,7 @@ namespace AddressBook_LinQ
             Linq_Operations lopr = new Linq_Operations();
 
             //UC1&2(CreateAddressBook)
-             lopr.CreateAddressBook();
+            lopr.CreateAddressBook();
 
             //UC3(InsertValues)
             Console.WriteLine("Insertion of Contacts");
@@ -36,15 +36,15 @@ namespace AddressBook_LinQ
             Console.WriteLine("Searching for contacts from W.B.(state)");
             lopr.RetrieveContactsByState("W.B.");
 
-
             //UC7(Count By City or State)
             Console.WriteLine("City wise Count of Contacts");
             lopr.CountByCity();
             Console.WriteLine("\nState wise Count of Contacts");
             lopr.CountByState();
 
-
-
+            //UC8(Alphabetical order of contacts belonging to a given city
+            Console.WriteLine("Contacts belonging to Bhilai");
+            lopr.AlphabeticalOrderofContactsByName("Bhilai");
         }
     }
 }
